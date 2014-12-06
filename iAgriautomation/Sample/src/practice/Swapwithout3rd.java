@@ -1,0 +1,34 @@
+package practice;
+
+import java.util.Scanner;
+
+public class Swapwithout3rd {
+static int a;
+static int b;
+static int temp;
+	public static void main(String[] args) {
+		System.out.println("Enter value of a and b");
+		
+		Scanner scan = new Scanner(System.in);
+		
+		a=scan.nextInt();
+		b=scan.nextInt();
+		System.out.println("Before swap :\n" +a+  " and " +b);
+a=a+b;
+b=a-b;
+a=a-b;
+		/*a=a*b;
+		b=a/b;
+		a=a/b;*/
+		
+		/*a=a^b;
+		b=a^b;
+		a=a^b;*/
+		
+		/*temp=a;
+		a=b;
+		b=temp;*/
+System.out.println("Swapped values are : \n" +a+ " and " +b);
+	}
+
+}

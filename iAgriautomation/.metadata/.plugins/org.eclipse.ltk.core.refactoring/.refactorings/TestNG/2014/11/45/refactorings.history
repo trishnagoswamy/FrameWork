@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.selenium.testcases.work_progress&apos; to &apos;Work_Progress&apos;&#x0A;- Original project: &apos;TestNG&apos;&#x0A;- Original element: &apos;com.selenium.testcases.work_progress&apos;&#x0A;- Renamed element: &apos;com.selenium.testcases.Work_Progress&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;work_progress&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.selenium.testcases{work_progress.java[work_progress" matchStrategy="1" name="Work_Progress" qualified="false" references="true" similarDeclarations="false" stamp="1415009058050" textual="false" version="1.0"/>
+</session>

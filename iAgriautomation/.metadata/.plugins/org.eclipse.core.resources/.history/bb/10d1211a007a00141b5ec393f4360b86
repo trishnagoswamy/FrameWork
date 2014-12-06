@@ -1,0 +1,24 @@
+package practice;
+
+import java.util.Scanner;
+
+public class Swapwithout3rd {
+static int a;
+static int b;
+	public static void main(String[] args) {
+		System.out.println("Enter value of a and b");
+		
+		Scanner scan = new Scanner(System.in);
+		
+		a=scan.nextInt();
+		b=scan.nextInt();
+/*a=a+b;
+b=a-b;
+a=a-b;*/
+		a=a*b;
+		b=a/b;
+		a=a/b;
+System.out.println("Swapped values are : " + a + "and" +b);
+	}
+
+}

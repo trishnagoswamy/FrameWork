@@ -1,0 +1,18 @@
+package practice;
+
+import java.util.Scanner;
+
+public class Swapwithout3rd {
+static int a;
+static int b;
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter value of a and b");
+		a=scan.nextInt();
+		b=scan.nextInt();
+a=a+b;
+b=a-b;
+a=a-b;
+	}
+
+}
