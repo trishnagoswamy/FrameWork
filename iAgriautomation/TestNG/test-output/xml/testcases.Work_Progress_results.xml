@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Regression Test Suite"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="15.950">
+  <properties />
+  
+  
+            <testcase name="entry_creation" time="4.909" classname="testcases.Work_Progress" />
+                <testcase name="contractor_Bill" time="11.028" classname="testcases.Work_Progress" />
+                <testcase name="print_report" time="0.013" classname="testcases.Work_Progress" />
+      
+</testsuite>

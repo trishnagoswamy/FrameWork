@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Work Progress Suite]">
+  <test name="Work Progress Test Results(failed)">
+    <classes>
+      <class name="testcases.Work_Progress">
+        <methods>
+          <include name="confir_box"/>
+          <include name="entry_creation"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- testcases.Work_Progress -->
+    </classes>
+  </test> <!-- Work Progress Test Results(failed) -->
+</suite> <!-- Failed suite [Work Progress Suite] -->
