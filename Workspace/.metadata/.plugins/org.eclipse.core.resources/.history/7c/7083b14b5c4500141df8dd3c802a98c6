@@ -1,0 +1,105 @@
+package iAgriMarC;
+
+//import java.beans.Visibility;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+//import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+
+public class Bank_Details_Creation {
+	public WebDriver driver;
+	
+  
+	@BeforeTest
+	  public void beforeTest() {
+		  driver = new FirefoxDriver();
+		  driver.get("http://192.168.1.124:85/");
+		  driver.manage().window().maximize();
+		  driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
+		  //Login to 'Afzalpur APMC'
+		  driver.findElement(By.xpath("//input[@id='txtUsername']")).sendKeys("afzalpurapmc");
+		  driver.findElement(By.xpath("//input[@id='txtPassword']")).sendKeys("vsspl");
+		  driver.findElement(By.xpath("//button[text()='Login']")).click(); 
+		  driver.findElement(By.xpath("//div[@class='x-panel-header x-unselectable x-accordion-hd']/span[contains(text(),'Accounts')]")).click();
+		  driver.findElement(By.xpath("//a[@class='x-tree-node-anchor']/span[contains(text(),'Bank Details')]")).click();
+		  driver.switchTo().frame("3025_IFrame");
+	}
+	
+	@Test(enabled = false)
+	public void capture(){
+		System.out.println("*********Capturing elements from grid********");
+	/*String b_grid = null;
+	try{
+		b_grid=driver.findElement(By.xpath("/table/tbody/tr/td/div[@class='x-grid3-cell-inner x-grid3-col-lblBankName']")).getText();
+	}
+	catch(Exception e){
+		System.out.println("Failed Reason  " +e.getMessage());
+	}*/
+	}
+	
+	@Test(enabled=false)
+	private void bank_creation() throws InterruptedException{
+		
+		
+		//String value;
+		driver.findElement(By.xpath("//td/em/button[contains(text(),'New Record')]")).click();
+		
+		driver.findElement(By.id("BankAccountCreationWindow_txtBankName")).sendKeys("fffff");
+		
+		
+		driver.findElement(By.id("BankAccountCreationWindow_txtShortName")).sendKeys("fffff");
+		
+		driver.findElement(By.xpath("//textarea[@id='BankAccountCreationWindow_txtAddress']")).sendKeys("Afzalpur branch");
+		driver.findElement(By.xpath("//input[@id='BankAccountCreationWindow_txtContactNumber']")).sendKeys("3333333333");
+		driver.findElement(By.xpath("//input[@id='BankAccountCreationWindow_txtAccountType']")).sendKeys("Savings");
+		driver.findElement(By.xpath("//input[@id='BankAccountCreationWindow_txtAccountNumber']")).sendKeys("123456");
+		driver.findElement(By.xpath("//input[@id='BankAccountCreationWindow_txtAccountholderName']")).sendKeys("Afzalpur apmc");
+		driver.findElement(By.xpath("//img[@class='x-form-trigger x-form-arrow-trigger']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[@class='x-combo-list-inner']/div[contains(text(),'Bank Account')]")).click();
+	    driver.findElement(By.xpath("//img[@class='x-form-trigger x-form-arrow-trigger'] ")).click();
+	    driver.findElement(By.xpath("//div[@class='x-combo-list-inner']/div[contains(text(),'Cr')]")).click();
+	    
+	    driver.findElement(By.id("BankAccountCreationWindow_txtMinBalance")).sendKeys("2000");
+		
+	 WebDriverWait wait= new WebDriverWait(driver, 30); 
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tbody/tr/td[@class='x-btn-center']/em/button[contains(text(),'Save')]"))).click();
+	Thread.sleep(1000);
+			 WebElement confirmation_msg =driver.findElement(By.xpath("//div[@class='ext-mb-content']/span[@class='ext-mb-text']"));
+	String msg = confirmation_msg.getText();
+	System.out.println(msg);
+	driver.findElement(By.xpath("//td/em/button[contains(text(),'OK')]")).click();
+	driver.findElement(By.xpath("//button[@class='x-btn-text icon-cancel']")).click();
+	
+	
+	}
+	
+	@Test(enabled=true)
+	public void verify_record(){
+	List<WebElement> grid= driver.findElements(By.xpath(".//*[@id='ext-gen100']/div[1]/table/tbody/tr"));	
+int rec_count=grid.size(); 
+	System.out.println("Record Count is " + rec_count);
+	
+	//WebElement cell_data = driver.findElement(By.xpath("//table[@class='x-grid3-row-table']/tbody/tr/td[@class='x-grid3-col x-grid3-cell x-grid3-td-lblBankName']/div[@class='x-grid3-cell-inner x-grid3-col-lblBankName']"));
+
+	//for(int i=1;i<rec_count;i++){
+	
+	}
+	/*@Test
+	public void find_record(){
+		WebElement cell_data = driver.findElement(By.xpath("//table[@class='x-grid3-row-table']/tbody/tr/td[@class='x-grid3-col x-grid3-cell x-grid3-td-lblBankName']/div[@class='x-grid3-cell-inner x-grid3-col-lblBankName']"));
+if(cell_data.equals(obj)){
+	
+}
+		
+	}*/
+  
+}

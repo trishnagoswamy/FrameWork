@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Automation Test For Regression" verbose = "1">
+
+<test name="Creation of Member of Communitee">
+
+<classes>
+
+<class name="iAgriMarC.login/>
+
+</classes>
+
+</test>
+</suite>
